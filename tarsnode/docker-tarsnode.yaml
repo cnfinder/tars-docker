@@ -1,0 +1,14 @@
+version: "3"
+services:
+    tarsnode:
+        image: registry.cn-shanghai.aliyuncs.com/finder/tars:node-gov1.0
+        container_name: tarsnode
+        environment:
+            TarsRegistryIp: 192.168.0.162
+           # TarsRegistryPort: 17890
+            MOUNT_DATA: "true"
+       
+        network_mode: "host"
+        volumes:
+            - /mnt/tardata:/data
+

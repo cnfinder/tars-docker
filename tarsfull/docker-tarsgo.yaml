@@ -1,0 +1,16 @@
+version: "3"
+services:
+    tars:
+        image: registry.cn-shanghai.aliyuncs.com/finder/tars:gov1.0
+        container_name: tars
+        environment:
+            DBIP: 192.168.0.162
+            DBPort: 3306
+            DBUser: root
+            DBPassword: password
+            MOUNT_DATA: "true"
+       
+        network_mode: "host"
+        volumes:
+            - /mnt/tardata:/data
+
